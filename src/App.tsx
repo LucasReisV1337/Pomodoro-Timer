@@ -1,3 +1,19 @@
+/* eslint-disable no-unused-vars */
+import { ThemeProvider } from 'styled-components'
+
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './Router'
+
+import { GlobalStyle } from './styles/global'
+import { defaultTheme } from './styles/themes/default'
+
 export function App() {
-  return <h1>Hello World!</h1>
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+      <GlobalStyle />
+    </ThemeProvider>
+  )
 }
